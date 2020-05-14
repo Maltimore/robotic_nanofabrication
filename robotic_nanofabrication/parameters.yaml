@@ -1,0 +1,62 @@
+default:
+  # General settings
+  keep_n_episodes: 99999  # we do not forget episodes
+  model: MLP
+  agent: MLPAgent
+  angle: 45.0  # which plane to plot
+  # experiment setup
+  environment: toy_sophisticated
+  train_trajectory_name: trajectory_180125.txt  # simulation environment built around this real trajectory
+  n_features: 3  # x, y , z
+  stop_after_episode: 150  # give up after this many episodes
+  # simulation parameters
+  lower_hose_radius: 0.75
+  upper_hose_radius: 1.75
+  model_based_sampling_ratio: 0.9  # percentage of datapoints used for training obtained from the model
+  # NN params
+  n_hidden: 30
+  # Optimization
+  optimizer: Adam  # Adam or SGD
+  lr: 0.001
+  batch_size: 30
+  momentum: 0.0  # only active for SGD
+  min_train_steps_per_episode: 200
+  max_train_steps_per_episode: 2000
+  # Reinforcement Learning
+  target_update_rate: 200
+  gamma: 0.97
+  action_temperature: 0.004
+  train_temperature: -0.1  # this temperature is only used for the train step
+  fail_reward: -1
+  success_reward: 1
+  step_reward: 0.01
+
+gridsearch:
+    config1:
+        name:
+            - default
+        model_based_sampling_ratio:
+            - 0.0
+        train_temperature:
+            - 0.004
+    config2:
+        name:
+            - model_based
+        model_based_sampling_ratio:
+            - 0.9
+        train_temperature:
+            - 0.004
+    config3:
+        name:
+            - rupture_avoidance
+        model_based_sampling_ratio:
+            - 0.0
+        train_temperature:
+            - -0.100
+    config4:
+        name:
+            - both
+        model_based_sampling_ratio:
+            - 0.9
+        train_temperature:
+            - -0.100
