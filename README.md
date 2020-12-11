@@ -1,9 +1,13 @@
 # Robotic nanofabrication
 
 ## Introduction
-This repository contains the code for the Reinforcement Learning agent described in
+This repository contains the code for the Reinforcement Learning agent described in the paper
 
-https://arxiv.org/abs/2002.11952
+### Autonomous robotic nanofabrication with reinforcement learning
+
+Science Advances (open access): https://advances.sciencemag.org/content/6/36/eabb6987.full
+
+Arxiv: https://arxiv.org/abs/2002.11952
 
 ## Usage
 
