@@ -29,4 +29,6 @@ The swarm plots in the paper (Fig. 2D) have been created using the follwing repo
 
 https://github.com/maltimore/gridsearch_helper
 
+you should use tag `0.0.2`.
+
 That repository has the scripts to parallelize experiments on the Sun Grid Engine or Univa Grid Engine. Additionally, it contains python files that can aggregate the data from the parallelized runs and create the swarm plots.
